@@ -1,0 +1,25 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#left{
+    height: 100%;
+    width: 15%;
+    background-color: green;   
+    float: left;
+}
+li{
+    margin: 50px;
+    list-style: none;
+}
+li:hover{
+    color: white;
+}
+#right{
+    height: 100%;
+    width: 85%;
+    background-color: cornsilk;
+    float: left;
+}

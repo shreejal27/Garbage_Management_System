@@ -1,0 +1,75 @@
+
+
+  body{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: lightgreen;
+  }
+
+  .box{
+    height: 300px;
+    width: 220px;
+    margin: 5px;
+    color: black; 
+    float: left; 
+    background-color: cornsilk;
+  
+  }
+  .box:hover{
+    transform: translateY(-5px);
+    /* transform: scale(1.1); */
+    box-shadow: 20px 20px 20px rgba(32, 222, 58, 0.584); 
+  }
+
+
+  .image{
+    margin: 0px;
+    height: 80%;
+    background-color:grey;
+  }
+  .details{
+    height: 20%;
+    margin-left: 10px;
+    margin-top: 10px;
+
+  }
+  .title{
+    font-size: larger;
+
+  }
+  .price{
+    font-size: large;
+    color: darkgreen;
+  
+  }
+
+  .link{
+    color: green;
+  }
+  a{
+        color: green;
+    }
+
+  .align{
+    text-align: center;
+  }
+
+
+  input{
+    width: 90%;
+    height: 40px;
+
+  }
+  button img{
+   
+    width: 50px;
+
+  }
+  button{
+ 
+    width:50px;
+    height: 50px;
+    background: none;
+    border: none;
+  
+  }

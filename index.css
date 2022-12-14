@@ -1,0 +1,85 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#mainbox {
+  height: 70%;
+}
+
+.iconbox-top :hover {
+  background-color: red;
+}
+.top,
+.bottom {
+  height: 50%;
+  width: 100%;
+}
+.iconbox-top {
+  height: 100%;
+  width: 50%;
+
+  float: left;
+  position: relative;
+}
+
+.iconbox-bottom {
+  height: 100%;
+  width: 50%;
+
+  float: left;
+  position: relative;
+}
+/* .icon-logo {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+} */
+.icon-logo {
+  height: 200px;
+  width: 200px;
+  margin-top: 3%;
+  margin-left: 37%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition: 5s ease;
+}
+
+#logo1 {
+  background-image: url("icons/garbage-truck.png");
+}
+#logo2 {
+  background-image: url("icons/dustbin.png");
+}
+#logo3 {
+  background-image: url("icons/complain.png");
+}
+#logo4 {
+  background-image: url("icons/recycler.png");
+}
+ 
+.icon-logo:hover{
+  transform: scale(1.3);
+}
+.icon-title {
+  height: 10%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: darkgreen;
+}
+
+
+p {
+  text-align: center;
+}
+
+p:hover{
+  color: black;
+}

@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Please Input Valid Data For SignUp</h1>
+
+      <br><br><br> <br>
+      <form id="form" action="signup.php" method="POST" onsubmit="submitForm(event)">
+        <label>Username</label><br />
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$"
+          title="Username Must Be Between 8 - 20 characters."
+          autofocus
+          required
+        /><br />
+        <label>Password</label><br />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          placeholder="Password"
+          pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          title="Minimum eight characters at least one letter and one number"
+        /><br />
+        <label>Re-enter Password</label><br />
+        <input
+          type="password"
+          name="repassword"
+          id="repassword"
+          onkeyup="check();"
+          placeholder="Retype Password"
+          required
+        /><br />
+        <span id="message"></span>
+        <br><br>
+        <input type="submit" value="Send"></input>
+      </form>
+    </div>
+  </body>
+  <script>
+    var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('repassword').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+function submitForm(event){
+  if (document.getElementById('password').value !=
+    document.getElementById('repassword').value) {
+  event.preventDefault();
+    }
+}
+
+    </script>
+</html>
+
+<!-- <script>
+  // function confirmpassword() {
+  //   let pass1 = document.getElementById("pass1").value;
+  //   let pass2 = document.getElementById("pass2").value;
+  //   let message = document.getElementById("message");
+  //   if (pass1 && pass2 != 0) {
+  //     if (pass1 == pass2) {
+  //       message.textContent = "Password matched";
+  //       message.style.backgroundColor = "Green";
+  //       // location.href = "index.php";
+  //     } else {
+  //       message.textContent = "Password UNmatched";
+  //       message.style.backgroundColor = "Red";
+  //       location.href = "signup.html";
+  //     }
+  //   } else {
+  //     alert("Password cant be null!");
+  //     message.textContent = "";
+  //     location.href = "signup.html";
+  //   }
+  // }
+</script> -->

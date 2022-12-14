@@ -1,0 +1,160 @@
+<script>
+  function validateMyForm() {
+    var nameEl = document.getElementById("name").value;
+    if (nameEl == "") {
+      document.getElementById("nameErr").innerText = "Full Name is required";
+      return false;
+    }
+
+    var msgEl = document.getElementById("messages").value;
+    if (msgEl == "") {
+      document.getElementById("msgErr").innerText = "Message is required";
+      return false;
+    }
+
+    var emailEl = document.getElementById("email").value;
+    if (emailEl == "") {
+      document.getElementById("emailErr").innerText = "Email is required";
+      return false;
+    }
+    var numEl = document.getElementById("number").value;
+    if (numEl == "") {
+      document.getElementById("numErr").innerText = "Phone Number is required";
+      return false;
+    }
+    return true;
+  }
+
+  function checkValue() {
+    document.getElementById("nameErr").innerText = "";
+    document.getElementById("emailErr").innerText = "";
+    document.getElementById("msgErr").innerText = "";
+    document.getElementById("numErr").innerText = "";
+  }
+  function ValidateEmail() {
+    var email = document.getElementById("email").value;
+    document.getElementById("emailErr").innerText = "";
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!mailformat.test(email)) {
+      emailErr.innerHTML = "Invalid Email Address.";
+    }
+  }
+  function ValidateName() {
+    var name = document.getElementById("name").value;
+    document.getElementById("nameErr").innerText = "";
+    var nameFormat = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    if (!nameFormat.test(name)) {
+      nameErr.innerHTML = "Name can not contain numbers.";
+    }
+  }
+  function Validatem() {
+    var msg = document.getElementById("messages").value;
+    document.getElementById("msgErr").innerText = "";
+    var msgFormat = /^[A-Za-z]+$/;
+    if (!msgFormat.test(msg)) {
+      msgErr.innerHTML = "Messages can not contain numbers.";
+    }
+  }
+  function Validatenum() {
+    var num = document.getElementById("number").value;
+    document.getElementById("numErr").innerText = "";
+    var numFormat = /^\d{10}$/;
+    if (!numFormat.test(num)) {
+      numErr.innerHTML = "Invalid number";
+    }
+  }
+</script>
+
+<div class="contactForm">
+  <form action="contact_process.php" method="post" name="form1">
+    <h2>Send Message</h2>
+    <div class="inputBox">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Full Name"
+        autocomplete="off"
+        onkeyup="ValidateName();"
+      />
+
+      <p id="nameErr"></p>
+    </div>
+    <div class="inputBox">
+      <input
+        type="text"
+        name="email"
+        id="email"
+        placeholder="Email"
+        autocomplete="off"
+        onkeyup="ValidateEmail();"
+      />
+
+      <p id="emailErr"></p>
+    </div>
+    <div class="inputBox">
+      <input
+        type="text"
+        name="number"
+        id="number"
+        autocomplete="off"
+        placeholder="Phone Number"
+        onkeyup="ValidateNumber();"
+      />
+
+      <p id="numErr"></p>
+    </div>
+    <div class="inputBox">
+      <textarea
+        name="messages"
+        id="messages"
+        autocomplete="off"
+        placeholder="Suggestions"
+        onkeyup="ValidateMsg();"
+      ></textarea>
+
+      <p id="msgErr"></p>
+    </div>
+
+    <div class="inputBox">
+      <input
+        type="submit"
+        name="submit"
+        value="Send"
+        onclick="return ValidateMyForm()"
+      />
+      <p id="submitErr"></p>
+    </div>
+    <div style="color: red; font-weight: bold; font-size: large"></div>
+  </form>
+  <script>
+
+        var nameErr = document.getElementById("nameErr"); var numErr =
+        document.getElementById("numErr"); var emailErr =
+      document.getElementById("emailErr"); var msgErr =
+      document.getElementById("msgErr"); var submitErr =
+      document.getElementById("submitErr"); function ValidateName(){ var name =
+      document.getElementById("name").value; if(name.length == 0){
+      nameErr.innerHTML= "Name is Required"; return false; }
+      if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){ nameErr.innerHTML= "Write Full
+      Name"; return false; } return true; } function ValidateNumber(){ var phone =
+      document.getElementById("number").value; if(phone.length == 0){
+      numErr.innerHTML= "Phone Number is Required"; return false; } if(phone.length
+      !== 10){ numErr.innerHTML= "Phone Number should be 10 digits"; return false; }
+      if(!phone.match(/^[0-9]{10}$/)){ numErr.innerHTML= "Phone Number can't contain
+      alphabets"; return false; } return true; } function ValidateEmail(){ var email
+      = document.getElementById("email").value; if(email.length == 0){
+      emailErr.innerHTML= "Email is Required"; return false; }
+      if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+      emailErr.innerHTML= "Invalid Email Format"; return false; } return true; }
+      function ValidateMsg(){ var msg = document.getElementById("messages").value;
+      var required = 15; var left = required - message.length; if(left > 0){
+      msgErr.innerHTML= left + "more characters required"; return false; } return
+      true; } function validateMyForm(){ if(!validateName() || !validateNum() ||
+      !validateEmail() || !validateMsg() ){ submitErr.style.display="block";
+      submitErr.innterHTML="Please fix errors to submit";
+      setTimeout(function(){submitError.style.display='none';}, 3000) return false;
+      } }
+    </div>
+  </script>
+</div>

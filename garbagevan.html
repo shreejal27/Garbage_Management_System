@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Garbage Van</title>
+  </head>
+  <body>
+    <div id="details">Location Loading</div>
+    <div id="map" style="height: 500px; width: 500px">
+      <iframe
+        src='https://www.google.com/maps?q=<?php echo $row["latitude"];?>,<?php echo $row["longitude"]; ?&hl=es;z=14&output=embed '
+        frameborder="0"
+      ></iframe>
+    </div>
+  </body>
+</html>
+<script>
+  var reqcount = 0;
+
+  navigator.geolocation.watchPosition(successCallback, errorCallback);
+
+  function successCallback(position) {
+    var lat;
+    var long;
+    const { accuracy, latitude, longitude, altitude, heading, speed } =
+      position.coords;
+    reqcount++;
+    details.innerHTML = "Accuracy: " + accuracy + "<br>";
+    details.innerHTML += "Latitude: " + latitude + "<br>";
+    details.innerHTML += "Longitude: " + longitude + "<br>";
+    details.innerHTML += "Altitude: " + altitude + "<br>";
+    details.innerHTML += "Heading: " + heading + "<br>";
+    details.innerHTML += "Speed: " + speed + "<br>";
+    details.innerHTML += "reqcount: " + reqcount;
+
+    lat = latitude;
+    long = longitude;
+    console.log(latitude);
+    console.log(longitude);
+  }
+
+  function errorCallback(error) {}
+
+  // var options = {
+  //   enableHighAccuracy: false,
+  //   timeout: 5000,
+  //   maximumAge: 0
+  // };
+</script>
