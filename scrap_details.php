@@ -118,9 +118,22 @@ $row = mysqli_fetch_array($data);
   function add(){
     var result = confirm("One Item " + sname + " Has Been Added To Your Cart");
     if (result == true){
-        document.cookie="scrapname="+sname;
-        document.cookie="scrapid="+sid;
+        // document.cookie="scrapname="+sname;
+        // document.cookie="scrapid="+sid;
         document.cookie="squantity="+data;
+        <?php
+            session_start();
+            $data= $_COOKIE['squantity'];
+            $i=0;
+            while ($i<=10){
+
+                $arr=array($id, $scrapname,$data);
+                $_SESSION['arr']=$arr;
+                $i++;
+            };
+           
+        ?>
+      
       
     }
     if(result == false){
