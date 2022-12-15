@@ -15,10 +15,17 @@ $res= $_POST["result"];
 
 $query= "Select * from scrap where sname= '$res'";
 
-$result= mysqli_query($connection, $query);
-?>
+// $query1= "Select * from scrap where sname= '$res'";
 
-<span>items found for "<?php echo $res ?>"</span> 
+$result= mysqli_query($connection, $query);
+// $result1= mysqli_query($connection, $query);
+// $i=0;
+// while($row= mysqli_fetch_assoc($result1)){
+$rows= mysqli_num_rows($result);
+    // $i++;
+
+?>
+<span><?php echo $rows?>  items found for "<?php echo $res ?>"</span> 
 <br>
 <br><br>
 
