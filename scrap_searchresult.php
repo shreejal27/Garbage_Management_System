@@ -1,32 +1,24 @@
-<?php require_once "1)config.php"; ?>
 <?php
+ require_once "1)config.php";
 
-$query= "Select * from scrap";
+$res= $_POST["result"];
+
+$query= "Select * from scrap where sname= '$res'";
 
 $result= mysqli_query($connection, $query);
 ?>
 
+<span>items found for "<?php echo $res ?>"</span> 
 
- <link rel="stylesheet" href="scrap_display.css" />
-
-
-
-<form action="scrap_searchresult.php" method="POST">
-  <input type="text" name="result" placeholder="Search anything"  >
-
-  <button type="submit"> <img src="icons/search.png" > </button>
-</form>
-
-    <h2> Most Sold</h2>
-
-        <?php
+<?php
     while($row= mysqli_fetch_assoc($result)){
         ?>
            <a class="link" href="scrap_details.php?id=<?php echo $row['id'];?>">
 
      
-       
+        
         <div class="box">
+
 
           <div class="image">
 
@@ -52,3 +44,4 @@ $result= mysqli_query($connection, $query);
         <?php 
         }
         ?>
+
