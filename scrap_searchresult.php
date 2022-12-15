@@ -1,3 +1,13 @@
+ <link rel="stylesheet" href="scrap_display.css" />
+
+ <form action="scrap_searchresult.php" method="POST">
+  <input type="text" name="result" placeholder="Search anything"  >
+
+  <button type="submit"> <img src="icons/search.png" > </button>
+</form>
+<br>
+<br>
+<br>
 <?php
  require_once "1)config.php";
 
@@ -9,6 +19,8 @@ $result= mysqli_query($connection, $query);
 ?>
 
 <span>items found for "<?php echo $res ?>"</span> 
+<br>
+<br><br>
 
 <?php
     while($row= mysqli_fetch_assoc($result)){
