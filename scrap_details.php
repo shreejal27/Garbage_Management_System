@@ -126,7 +126,7 @@ $row = mysqli_fetch_array($data);
             session_start();
              $jsquantity =  $_COOKIE['quantity'];
              
-             $sname = [];
+             $sname = array();
              $sid = [];
              $squantity = [];
              
@@ -135,9 +135,9 @@ $row = mysqli_fetch_array($data);
              $sid[]= $id;
              $squantity[] = $jsquantity;
              
-             echo($sname[0]);
-             echo($sid[0]);
-             echo($squantity[0]);
+            //  echo($sname[0]);
+            //  echo($sid[0]);
+            //  echo($squantity[0]);
              $_SESSION['sname'] = $sname;
              $_SESSION['sid'] = $sid;
              $_SESSION['squantity'] = $squantity;
