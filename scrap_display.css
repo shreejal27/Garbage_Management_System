@@ -5,7 +5,11 @@
     margin-right: 10%;
     background-color: lightgreen;
   }
+  .row{
+    height:400px ;
+    width: 100%;
 
+  }
   .box{
     height: 300px;
     width: 220px;
