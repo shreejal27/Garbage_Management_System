@@ -15,14 +15,9 @@ $res= $_POST["result"];
 
 $query= "Select * from scrap where sname= '$res'";
 
-// $query1= "Select * from scrap where sname= '$res'";
-
 $result= mysqli_query($connection, $query);
-// $result1= mysqli_query($connection, $query);
-// $i=0;
-// while($row= mysqli_fetch_assoc($result1)){
+
 $rows= mysqli_num_rows($result);
-    // $i++;
 
 ?>
 <span><?php echo $rows?>  items found for "<?php echo $res ?>"</span> 
@@ -63,4 +58,11 @@ $rows= mysqli_num_rows($result);
         <?php 
         }
         ?>
+
+        <?php 
+        if ($rows == 0){
+            echo "No result for the search " .$res;
+            echo "<br><br><br>";
+            echo "Please recheck your search term or Search another item";
+        }
 

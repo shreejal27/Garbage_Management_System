@@ -1,10 +1,11 @@
 <?php
 session_start();
-$session=$_SESSION['arr'];
 
-$id= $_COOKIE['scrapname'];
-$name= $_COOKIE['scrapid'];
-$quantity= $_COOKIE['squantity'];
+// $session=$_SESSION['arr'];
+
+$id= $_SESSION['sname'];
+$name= $_SESSION['sid'];
+$quantity= $_SESSION['squantity'];
 
 // echo $id;
 // echo "<br>";
@@ -13,8 +14,16 @@ $quantity= $_COOKIE['squantity'];
 // echo $quantity;
 
 
-foreach($session as $val)
+foreach($id as $val1)
 {
-  echo $val.'<br>';
+  echo $val1.'<br>';
+}
+foreach($name as $val2)
+{
+  echo $val2.'<br>';
+}
+foreach($quantity as $val3)
+{
+  echo $val3.'<br>';
 }
 ?>

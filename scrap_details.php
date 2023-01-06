@@ -77,7 +77,7 @@ $row = mysqli_fetch_array($data);
         Quantity 
        </span>
        <button onclick="decrease()" style="margin:15px;">-</button>
-            <span id="counter"></span>
+            <span id="counter">1</span>
             <button onclick="increase()" style="margin:15px;">+</button>
            
 
@@ -95,8 +95,8 @@ $row = mysqli_fetch_array($data);
 <script type="text/javascript">
     var sname = "<?php echo $scrapname; ?>";
     var sid = "<?php echo $id; ?>";
-      data = 1;
-  document.getElementById("counter").innerText = data;
+    var data = 1;
+    document.getElementById("counter").innerText = data;
 
   function increase() {
       data = data + 1;
@@ -117,29 +117,35 @@ $row = mysqli_fetch_array($data);
 
   function add(){
     var result = confirm("One Item " + sname + " Has Been Added To Your Cart");
+
     if (result == true){
-        // document.cookie="scrapname="+sname;
-        // document.cookie="scrapid="+sid;
-        document.cookie="squantity="+data;
+     
+            // console.log("true");
+            location.reload(); 
         <?php
             session_start();
-            $data= $_COOKIE['squantity'];
-            $i=0;
-            while ($i<=10){
-
-                $arr=array($id, $scrapname,$data);
-                $_SESSION['arr']=$arr;
-                $i++;
-            };
-           
-        ?>
+             $jsquantity =  $_COOKIE['quantity'];
+             
+             $sname = [];
+             $sid = [];
+             $squantity = [];
+             
+             
+             $sname[]= $scrapname;
+             $sid[]= $id;
+             $squantity[] = $jsquantity;
+             
+             echo($sname[0]);
+             echo($sid[0]);
+             echo($squantity[0]);
+             $_SESSION['sname'] = $sname;
+             $_SESSION['sid'] = $sid;
+             $_SESSION['squantity'] = $squantity;
+          
+             ?>
       
       
-    }
-    if(result == false){
-        event.preventDefault();
-    }
+        }
   }
- 
 </script>
 
