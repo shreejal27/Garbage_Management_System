@@ -9,12 +9,52 @@ $result= mysqli_query($connection, $query);
 
  <link rel="stylesheet" href="scrap_display.css" />
 
-<form action="scrap_searchresult.php" method="POST">
-  <input type="text" name="result" placeholder="Search anything"  >
 
-  <button type="submit"> <img src="icons/search.png" > </button>
-</form>
-<div class= "row">
+<div id="toprow">
+
+  <form action="scrap_searchresult.php" method="POST">
+    <input type="text" name="result" placeholder="Search anything"  >
+    
+    <button type="submit"> <img src="icons/search.png" > </button>
+  </form>
+  
+  
+  
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Category</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#plastic">Plastic</a>
+      <a href="#paper">Paper</a>
+      <a href="#ewaste">Ewaste</a>
+      <a href="#glass">Glass</a>
+    </div>
+  </div>
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+<br><br><br><br><br>
+
+<div class= "row" >
 
   <h2> Most Sold</h2>
   
@@ -57,9 +97,9 @@ $result= mysqli_query($connection, $query);
 
 <h1> Categories</h1>
 
-<div class= "row">
+<div class= "row" id="plastic">
 
-  <h2> Plastic</h2>
+  <h2> Plastic </h2>
   
   <?php
 $query1= "Select * from scrap where category = 'plastic' ";
@@ -99,7 +139,7 @@ while($row1= mysqli_fetch_assoc($result1)){
 ?>
 </div>
 
-<div class= "row">
+<div class= "row" id="paper">
 <h2> Paper</h2>
 
 <?php
@@ -140,7 +180,7 @@ while($row1= mysqli_fetch_assoc($result1)){
 ?>
 </div>
 
-<div class= "row">
+<div class= "row" id="ewaste">
 <h2> Ewaste</h2>
 
 <?php
@@ -181,7 +221,7 @@ while($row1= mysqli_fetch_assoc($result1)){
 ?>
 </div>
 
-<div class= "row">
+<div class= "row" id="glass">
 <h2> Glass</h2>
 
 <?php
@@ -221,3 +261,4 @@ while($row1= mysqli_fetch_assoc($result1)){
 }
 ?>
 </div>
+
