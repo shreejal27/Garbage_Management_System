@@ -9,13 +9,14 @@ if($cookie != ""){
   ?>
   <p style="font-size:24px; float:"left";> Your Cart </p>
   <?php
+  $i=0;
   foreach ($array as $sid => $quantity) {
       // echo "ScrapId: $sid, Quantity: $quantity <br>";
 
        require_once "1)config.php"; 
             $id= $sid;
             $qty = $quantity;
-
+            
             $query = "SELECT * FROM scrap WHERE id= '$id' ";
             $data = mysqli_query($connection, $query);
             $row = mysqli_fetch_array($data);
@@ -26,16 +27,19 @@ if($cookie != ""){
                 <div class="image" style="float:left; ">
                   <img src ="scrap/<?php echo $row["simage"]?>" height = '150px' width= '150px'>
                 </div>
-                <div class = "details">  
+                <div class = "details" id=  "name<?php echo ++$i?>">  
                   <?php echo $row["sname"]?> 
                 </div>
-                <div class = "details">
+                <div class = "details" id="qty<?php echo ++$i?>">
                   Qty: <?php echo $qty?>
                 </div>
         <div class = "details">
           Rs: <?php echo $row['sprice']?>
         </d>
       </div>
+        
+    
+      <button> <a class= "button" href="#" onclick="deletee(<?php echo $i?>)">Dee</a></button>
       
       
       <div class="sell">
@@ -53,7 +57,13 @@ else{
   print_r("Cart is empty");
 }
 ?>
-
+<script type="text/javascript">
+  function deletee(value){
+    var sname = document.getElementById("name"+(value-1)).innerHTML;
+    var sprice = document.getElementById("qty"+value).innerHTML;
+    console.log(sname, sprice);
+  }
+</script>
 
 
 <style>
