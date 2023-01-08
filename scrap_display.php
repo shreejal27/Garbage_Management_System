@@ -15,7 +15,7 @@ $result= mysqli_query($connection, $query);
   <form action="scrap_searchresult.php" method="POST">
     <input type="text" name="result" placeholder="Search anything"  >
     
-    <button type="submit"> <img src="icons/search.png" > </button>
+    <button type="submit"> <img src="icons/search.png" id="image" > </button>
   </form>
   
   

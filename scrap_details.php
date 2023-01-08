@@ -1,4 +1,5 @@
 <?php require_once "1)config.php"; 
+session_start();
 
 $id= $_GET['id'];
 
@@ -114,37 +115,65 @@ $row = mysqli_fetch_array($data);
       document.getElementById("counter").innerText = data;
      
   }
-
   function add(){
-    var result = confirm("One Item " + sname + " Has Been Added To Your Cart");
+      var result = confirm("One Item " + sname + " Has Been Added To Your Cart");
+      
+      if (result == true){
+        addToCart(sid, data);
+        
+        function addToCart(item, quantity) {
+            // Get the current cart from the cookie
+            var cart = getCookie("cart");
+            
+            // If the cart is empty, create an empty object
+            if (cart == "") {
+                cart = {};
+            } else {
+                // If the cart is not empty, parse the cookie string into an object
+                cart = JSON.parse(cart);
+            }
+            
+            // Check if the item is already in the cart
+            if (item in cart) {
+                // If it is, update the quantity
+                cart[item] += quantity;
+            } else {
+                // If it isn't, add the item to the cart with the specified quantity
+                cart[item] = quantity;
+            }
+            
+            // Save the updated cart object to the cookie
+            setCookie("cart", JSON.stringify(cart), 365);
+            }
 
-    if (result == true){
-     
-            // console.log("true");
-            location.reload(); 
-        <?php
-            session_start();
-             $jsquantity =  $_COOKIE['quantity'];
-             
-             $sname = array();
-             $sid = [];
-             $squantity = [];
-             
-             
-             $sname[]= $scrapname;
-             $sid[]= $id;
-             $squantity[] = $jsquantity;
-             
-            //  echo($sname[0]);
-            //  echo($sid[0]);
-            //  echo($squantity[0]);
-             $_SESSION['sname'] = $sname;
-             $_SESSION['sid'] = $sid;
-             $_SESSION['squantity'] = $squantity;
-          
-             ?>
-      
-      
+                    function getCookie(name) {
+                    // Split the cookies string into an array
+                    var cookies = document.cookie.split(";");
+                    
+                    // Find the cookie with the specified name
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = cookies[i].trim();
+                        // Check if the cookie starts with the name followed by '='
+                        if (cookie.indexOf(name + "=") == 0) {
+                        // Return the value of the cookie
+                        return cookie.substring(name.length + 1);
+                        }
+                    }
+                    // If the cookie was not found, return an empty string
+                    return "";
+                    }
+
+                    function setCookie(name, value, days) {
+                    // Create a date object for the expiration date
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    var expires = "expires=" + date.toUTCString();
+                    
+                    // Set the cookie string
+                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                    }
+                    
+
         }
   }
 </script>

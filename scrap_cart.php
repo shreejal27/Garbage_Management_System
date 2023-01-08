@@ -1,29 +1,39 @@
 <?php
-session_start();
 
-// $session=$_SESSION['arr'];
+$cookie = $_COOKIE['cart'];
 
-$id= $_SESSION['sname'];
-$name= $_SESSION['sid'];
-$quantity= $_SESSION['squantity'];
+// Decode the cookie value into an object
+if($cookie != ""){
 
-// echo $id;
-// echo "<br>";
-// echo $name;
-// echo "<br>";
-// echo $quantity;
-
-
-foreach($id as $val1)
-{
-  echo $val1.'<br>';
+  $cart = json_decode($cookie);
+  print_r($cart);
 }
-foreach($name as $val2)
-{
-  echo $val2.'<br>';
+else{
+  print_r("Cart is empty");
 }
-foreach($quantity as $val3)
-{
-  echo $val3.'<br>';
-}
+
+// Print the cart object
+
+// $cookies = array_keys($_COOKIE);
+
+// // Loop through the cookies array
+// foreach ($cookies as $cookie) {
+//   // Set the expiration time of the cookie to a past date
+//   setcookie($cookie, "", time() - 3600, "/", "", true, true);
+// }
 ?>
+
+<!-- // $item = "shamp";
+// $quantity = $cart->$item;
+
+// echo "Quantity of $item in the cart: $quantity";
+// session_start();
+
+// // $session=$_SESSION['arr'];
+
+// $id= $_SESSION['sname'];
+// $name= $_SESSION['sid'];
+// $quantity= $_SESSION['squantity']; -->
+
+
+
