@@ -9,6 +9,9 @@
             <label> Price: </label>
             <input type="number" name="sprice">
             <br>
+            <label> Category: </label>
+            <input type="text" name="scategory">
+            <br>
             <label> Scrap Image </label>
             <input type="file" name="simage">
             <br>

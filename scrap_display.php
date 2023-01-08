@@ -185,7 +185,7 @@ while($row1= mysqli_fetch_assoc($result1)){
 <h2> Glass</h2>
 
 <?php
-$query1= "Select * from scrap where category = 'glass' ";
+$query1= "Select * from scrap where category = 'glass'";
 
 $result1= mysqli_query($connection, $query1);
 while($row1= mysqli_fetch_assoc($result1)){

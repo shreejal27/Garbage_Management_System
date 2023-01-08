@@ -15,6 +15,7 @@ $cookie= $_COOKIE['quantity'];
     body{
         margin-left: 10%;
         margin-right: 10%;
+        background-color: lightgreen;
     }
 #addressbar{
     width: 100%;
@@ -22,10 +23,11 @@ $cookie= $_COOKIE['quantity'];
     padding: 30px 0;
     outline: 1px solid black;
     margin: 20px 0px; 
-   
+    background-color: green;
     border-radius: 10px;
 }
 a{
+    color: cornsilk;
     font-size: 20px;
     text-decoration: none;
 }
@@ -34,9 +36,10 @@ a{
     width: 100%;
     height: 450px;
     outline: 1px solid black;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 10px;
     float: left;
+    background-color: cornsilk;
 }
 
 .details{
@@ -54,7 +57,8 @@ a{
     font-size: 20px;
     padding: 5px;
     text-align: center;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    background-color: green;
     
 }
 .sell{
@@ -68,7 +72,8 @@ button{
     width: 200px;
     float:right;
     margin-top: 10px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    background-color: green;
     
 }
 .button{

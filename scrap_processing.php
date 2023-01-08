@@ -1,6 +1,7 @@
 <?php
 $sname= $_POST["sname"];
 $sprice= $_POST["sprice"];
+$scategory = $_POST["scategory"];
 
 
 $filename = $_FILES["simage"]["name"];
@@ -17,8 +18,8 @@ $database= "garbage";
 
 $connection= mysqli_connect($host, $user, $password, $database); 
 
-$query ="insert into scrap(sname, sprice, simage)
-        values('$sname', '$sprice', '$filename')";
+$query ="insert into scrap(sname, sprice, category, simage)
+        values('$sname', '$sprice', '$scategory', '$filename')";
 
 mysqli_query($connection, $query);
 
