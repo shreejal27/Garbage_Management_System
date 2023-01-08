@@ -27,7 +27,7 @@ if($cookie != ""){
                 <div class="image" style="float:left; ">
                   <img src ="scrap/<?php echo $row["simage"]?>" height = '150px' width= '150px'>
                 </div>
-                <div class = "details" id=  "name<?php echo ++$i?>">  
+                <div class = "details" id=  "name<?php echo ++$i?>" value="<?php echo $id?>">  
                   <?php echo $row["sname"]?> 
                 </div>
                 <div class = "details" id="qty<?php echo ++$i?>">
@@ -59,11 +59,69 @@ else{
 ?>
 <script type="text/javascript">
   function deletee(value){
-    var sname = document.getElementById("name"+(value-1)).innerHTML;
+    // var sname = document.getElementById("name"+(value-1)).innerHTML;
+    var sname = document.getElementById("name"+(value-1)).getAttribute('value');
     var sprice = document.getElementById("qty"+value).innerHTML;
-    console.log(sname, sprice);
+   
+   
+    deleteFromCart(sname);
   }
+  function deleteFromCart(itemToDelete) {
+  // Get the current value of the 'cart' cookie
+  var cookieValue = getCookie('cart');
+
+  // Parse the cookie value to extract the items in the cart
+  var items = JSON.parse(cookieValue);
+  console.log(cookieValue);
+
+  // Remove the item to delete from the array
+  delete items[itemToDelete];
+
+  // Serialize the modified array back into a string
+  cookieValue = JSON.stringify(items);
+
+  // Set the 'cart' cookie with the modified value
+  setCookie('cart', cookieValue, 7);
+
+}
+
+  function getCookie(name) {
+                    // Split the cookies string into an array
+                    var cookies = document.cookie.split(";");
+                    
+                    // Find the cookie with the specified name
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = cookies[i].trim();
+                        // Check if the cookie starts with the name followed by '='
+                        if (cookie.indexOf(name + "=") == 0) {
+                        // Return the value of the cookie
+                        return cookie.substring(name.length + 1);
+                        }
+                    }
+          
+                    // If the cookie was not found, return an empty string
+                    return "";
+                    }
+
+                        
+                    function setCookie(name, value, days) {
+                    // Create a date object for the expiration date
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    var expires = "expires=" + date.toUTCString();
+                    
+                    // Set the cookie string
+                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+         
+                    }
+                    
+
+
 </script>
+
+
+
+
 
 
 <style>
