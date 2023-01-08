@@ -163,6 +163,7 @@ $row = mysqli_fetch_array($data);
                     return "";
                     }
 
+                    
                     function setCookie(name, value, days) {
                     // Create a date object for the expiration date
                     var date = new Date();

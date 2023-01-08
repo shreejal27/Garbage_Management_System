@@ -64,7 +64,6 @@ a{
 .sell{
     margin-top: 30px;
     float: right; 
-    
     font-size: 20px;
 }
 button{
