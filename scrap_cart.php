@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
 
 $cookie = $_COOKIE['cart'];
@@ -39,7 +40,7 @@ if($cookie != ""){
       </div>
         
     
-      <button> <a class= "button" href="#" onclick="deletee(<?php echo $i?>)">Dee</a></button>
+        <i class="fa fa-trash-o" style="font-size:35px; cursor: pointer; margin-top: 30px;"  onclick="deletee(<?php echo $i?>)"></i>
       
       
       <div class="sell">
@@ -62,9 +63,8 @@ else{
     // var sname = document.getElementById("name"+(value-1)).innerHTML;
     var sname = document.getElementById("name"+(value-1)).getAttribute('value');
     var sprice = document.getElementById("qty"+value).innerHTML;
-   
-   
     deleteFromCart(sname);
+    window.location.reload();
   }
   function deleteFromCart(itemToDelete) {
   // Get the current value of the 'cart' cookie
