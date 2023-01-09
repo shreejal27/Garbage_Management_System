@@ -78,14 +78,36 @@ button{
 .button{
     font-size: 16px;
 }
+#form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+  }
 
     </style>
 
 <center>
     
     <div id="addressbar">
-        <a href="scrap_address.php"> Add Your Address </a>
+        <a href="#" id="form-button"> Add Your Address </a>
     </div>
+
+
+    <div id="form-container" style="display: none;">
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
 </center>
     
     <div id = "productbox">
@@ -124,3 +146,23 @@ button{
 
 
         </div>
+        <script>
+        // Get the button and form container elements
+        var button = document.getElementById("form-button");
+        var formContainer = document.getElementById("form-container");
+
+        // Add an event listener to the button that toggles the form
+        button.addEventListener("click", function() {
+            if (formContainer.style.display === "none") {
+            formContainer.style.display = "block";
+            } else {
+            formContainer.style.display = "none";
+            }
+        });
+
+        // document.addEventListener("click", function(event) {
+        // if (!formContainer.contains(event.target)) {
+        // formContainer.style.display = "none";
+        // }
+//   });
+</script>
