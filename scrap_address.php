@@ -1,10 +1,43 @@
 <link rel="stylesheet" href="complain.css" />
+<style>
+    input[type="radio"] {
+        all:unset;
+  display: inline;
+  -webkit-appearance: radio;
+  margin-left: 40px;
+  margin-top:10px;
+  position: absolute;
 
+}
+main{
+    /* height: 1500px; */
+}
+/* .lb{
+    display: inline;
+    margin-left: 0px;
+  
+  
+} */
+img{
+    position: relative;
+    margin:10px;
+    margin-left: 10px;
+    margin-top: -70px;
+}
+
+.lb{
+    all:unset;
+    display: inline;
+    position: absolute;
+    margin-left: 80px;
+    margin-top: 5px;
+}
+
+</style>
 
 
 <div class="main">
     <center>
-
         <h2>Enter Your Details Here</h2>
         <br><br>
     </center>
@@ -52,14 +85,18 @@
           title="Please Enter Alphabets Only"
           required
         /><br />
-        <label> Payment Method</label><br>
+        <label> Payment Method</label>
+        <br> 
+        <br> 
+        <br> 
+     
         <input type="radio" name="pay" value="Esewa">
-        <label> Esewa </label>
-        <input type="radio" name="pay" value="Khalti">
-        <label> Khalti </label>
-        <input type="radio" name="pay" value="COD">
-        <label> Cash On Delivery </label>
-        <br>
+        <label > <img src="icons/esewa.png" alt="esewaLogo" height= "78 px" width = "150 px"> </label>
+        <input type="radio" name="pay"  value="Khalti">
+        <label> <img src="icons/khalti.png" alt="khaltiLogo" height= "62 px" width = "150 px">  </label>
+        <input type="radio" name="pay"  value="COD">
+        <label class="lb"> Cash On PickUp </label>
+      <br>
 
 
         <input type="submit" value="Send"/>
