@@ -174,7 +174,7 @@ $row = mysqli_fetch_array($data);
                     document.cookie = name + "=" + value + ";" + expires + ";path=/";
                     }
                     
-
+                        
         }
   }
 </script>

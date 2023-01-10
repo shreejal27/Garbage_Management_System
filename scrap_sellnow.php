@@ -17,7 +17,7 @@ $cookie= $_COOKIE['quantity'];
         margin-right: 10%;
         background-color: lightgreen;
     }
-#addressbar{
+/* #addressbar{
     width: 100%;
     height: 20px;
     padding: 30px 0;
@@ -25,7 +25,7 @@ $cookie= $_COOKIE['quantity'];
     margin: 20px 0px; 
     background-color: green;
     border-radius: 10px;
-}
+} */
 a{
     color: cornsilk;
     font-size: 20px;
@@ -38,6 +38,7 @@ a{
     outline: 1px solid black;
     /* border-radius: 10px; */
     padding: 10px;
+    margin-top: 10%;
     float: left;
     background-color: cornsilk;
 }
@@ -89,26 +90,9 @@ button{
   }
 
     </style>
+    <div id="main">
 
-<center>
-    
-    <div id="addressbar">
-        <a href="#" id="form-button"> Add Your Address </a>
     </div>
-
-
-    <div id="form-container" style="display: none;">
-  <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email"><br>
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-
-</center>
     
     <div id = "productbox">
         <p style="font-size:24px;"> Sell Now </p>
@@ -141,28 +125,18 @@ button{
         <div class="sell">
             SubTotal: Rs. <?php echo ($cookie* $row['sprice'])?>
             <br>
-            <button> <a class= "button" href="scrap_confirm">Confirm Sell</a></button>
+            <button> <a class= "button" href="scrap_address.php" >Confirm Sell</a></button>
         </div>
 
 
         </div>
+       
+
         <script>
-        // Get the button and form container elements
-        var button = document.getElementById("form-button");
-        var formContainer = document.getElementById("form-container");
+           
+         
 
-        // Add an event listener to the button that toggles the form
-        button.addEventListener("click", function() {
-            if (formContainer.style.display === "none") {
-            formContainer.style.display = "block";
-            } else {
-            formContainer.style.display = "none";
-            }
-        });
+ 
 
-        // document.addEventListener("click", function(event) {
-        // if (!formContainer.contains(event.target)) {
-        // formContainer.style.display = "none";
-        // }
-//   });
-</script>
+            
+        </script>
