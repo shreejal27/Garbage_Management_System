@@ -7,17 +7,10 @@
   margin-left: 40px;
   margin-top:10px;
   position: absolute;
+  transform: scale(1.3);
+}
 
-}
-main{
-    /* height: 1500px; */
-}
-/* .lb{
-    display: inline;
-    margin-left: 0px;
-  
-  
-} */
+
 img{
     position: relative;
     margin:10px;
@@ -29,7 +22,7 @@ img{
     all:unset;
     display: inline;
     position: absolute;
-    margin-left: 80px;
+    margin-left: 70px;
     margin-top: 5px;
 }
 
@@ -39,6 +32,7 @@ img{
 <div class="main">
     <center>
         <h2>Enter Your Details Here</h2>
+        <br><br>
         <br><br>
     </center>
   <form id="form">
@@ -97,14 +91,13 @@ img{
         <input type="radio" name="pay"  value="COD">
         <label class="lb"> Cash On PickUp </label>
       <br>
-
-
         <input type="submit" value="Send"/>
 </form>
 
 </div>
 
 <script>
+    //for popup form in the same page
 //         // Get the button and form container elements
 //         var button = document.getElementById("form-button");
 //         var formContainer = document.getElementById("form");

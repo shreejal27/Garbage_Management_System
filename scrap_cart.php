@@ -8,6 +8,7 @@ if($cookie != ""){
   $cookies = $_COOKIE['cart'];
   $array = json_decode($cookies, true);
   ?>
+
   <p style="font-size:24px; float:"left";> Your Cart </p>
   <?php
   $i=0;
@@ -46,12 +47,15 @@ if($cookie != ""){
       <div class="sell">
         SubTotal: Rs. <?php echo ($qty* $row['sprice'])?>
         <br>
-        <button> <a class= "button" href="scrap_confirm">Confirm Sell</a></button>
+        <!-- <button> <a class= "button" href="scrap_address.php">Confirm Sell</a></button> -->
       </div>
     </center>
-      
-      <?php
+    
+    <?php
   }
+  ?>
+    <button> <a class= "button" href="scrap_address.php">Confirm Sell</a></button>
+  <?php
 }
 
 else{
@@ -166,6 +170,7 @@ button{
     width: 200px;
     float:right;
     margin-top: 10px;
+    margin: 10px;
     /* border-radius: 5px; */
     background-color: green;
     
