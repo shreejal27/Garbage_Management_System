@@ -66,7 +66,7 @@ else{
   function deletee(value){
     // var sname = document.getElementById("name"+(value-1)).innerHTML;
     var sname = document.getElementById("name"+(value-1)).getAttribute('value');
-    var sprice = document.getElementById("qty"+value).innerHTML;
+    // var sprice = document.getElementById("qty"+value).innerHTML;
     deleteFromCart(sname);
     window.location.reload();
   }

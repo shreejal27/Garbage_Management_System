@@ -35,7 +35,7 @@ img{
         <br><br>
         <br><br>
     </center>
-  <form id="form">
+  <form id="form" action="scrap_addressProcessing.php" method="POST">
   <label>First name</label><br />
         <input
           type="text"
@@ -60,7 +60,7 @@ img{
         <label>Phone</label><br />
         <input
           type="text"
-          name="lastName"
+          name="phone"
           placeholder="Your working phone number"
           pattern="[0-9]+"
           title="Please Enter Numbers Only"
@@ -73,7 +73,7 @@ img{
         <label>PickUp Address</label><br />
         <input
           type="text"
-          name="locality"
+          name="address"
           placeholder="Your locality here"
           pattern="[A-Za-z0-9]+"
           title="Please Enter Alphabets Only"
