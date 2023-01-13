@@ -34,7 +34,7 @@ $row = mysqli_fetch_array($data);
     <form action="scrap_update_processing.php" method="POST" enctype="multipart/form-data">
         <!-- <label>ID</label> -->
         <input value="<?php echo $id?>" type="number" name="id" hidden/> <br>
-        <img src ="scrap/<?php echo $row["simage"]?>" height = '100px' width= '100px'> <br>
+        <img src ="scrap/<?php echo $row["simage"]?>" height = '200px' width= '200px' style=" object-fit:contain;"> <br>
         <input type="file" name="simage" value="<?php echo $row['simage']?> "/> <br />
         <label>Scrap Name:</label><br />
         <input value="<?php echo $row['sname'] ?>" type="text" name="sname" 
