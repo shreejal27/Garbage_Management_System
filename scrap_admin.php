@@ -74,7 +74,13 @@ $result= mysqli_query($connection, $query);
             <input type="number" name="sprice" style="width: 150px; height: 25px;" required>
             <br>
             <label> Category: </label>
-            <input type="text" name="scategory" style="width: 150px; height: 25px;" required>
+            <!-- <input type="text" name="scategory" " required> -->
+            <select name = "scategory" style="width: 150px; height: 25px;">
+            <option value = "plastic" selected>Plastic</option>
+            <option value = "paper">Paper</option>
+            <option value = "glass">Glass</option>
+            <option value = "ewaste">Ewaste</option>
+         </select>
             <br>
             <label> Scrap Image </label>
             <input type="file" name="simage" style="width: 150px; height: 25px;" required>

@@ -20,7 +20,7 @@ $result = mysqli_query($connection, $query) or die("Query Unsuccessful");
 
 echo '<script> 
 alert ("Your Record Has Been Deleted.")
-window.location.replace("scrap_admin.php");
+window.location.replace("admin.php");
 </script>';
 
 
