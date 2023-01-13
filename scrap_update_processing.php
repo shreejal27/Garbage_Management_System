@@ -4,6 +4,7 @@ if(isset($_POST['update'])){
 $id = $_POST["id"];
 $sname= $_POST["sname"];
 $sprice= $_POST["sprice"];
+$category = $_POST["category"];
 
 
 $filename = $_FILES["simage"]["name"];
@@ -20,7 +21,7 @@ $image = $row1["simage"];
 
 
 
-$query ="Update scrap SET sname='$sname', sprice ='$sprice', simage='$filename' where id = '$id'";
+$query ="Update scrap SET sname='$sname', sprice ='$sprice', simage='$filename', category= '$category' where id = '$id'";
 $record = mysqli_query($connection, $query);
 
 if($record){

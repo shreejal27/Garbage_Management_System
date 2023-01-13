@@ -6,7 +6,23 @@ $phone= $_POST["phone"];
 $email = $_POST["email"];
 $address = $_POST["address"];
 $payment = $_POST["pay"];
-$items = 1;
+
+$cookie = $_COOKIE['cart'];
+
+// Decode the cookie value into an object
+if($cookie != ""){
+  $cookies = $_COOKIE['cart'];
+  $array = json_decode($cookies, true);
+
+//   foreach ($array as $sid => $quantity) {
+//             $id= $sid;
+//             $qty = $quantity;
+//             $items = array($sid, $quantity);
+
+//   }
+}
+$items = $array;
+
 
 $host= "localhost";
 $user= "root";

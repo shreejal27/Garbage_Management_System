@@ -42,7 +42,9 @@ $row = mysqli_fetch_array($data);
         <label>Price: </label><br />
         <input value="<?php echo $row['sprice'] ?>" type="number"name="sprice" 
               <br />
-        
+              <label>Category: </label><br />
+        <input value="<?php echo $row['category'] ?>" type="text" name="category" 
+              <br />
         <br>
         <input type="submit" name= "update" value= "update">
 
