@@ -13,7 +13,7 @@ function showDustbin() {
 }
 
 function scrap(){
-  fetch('scrap.php')
+  fetch('scrap_admin.php')
   .then(response => response.text())
   .then(text => document.getElementById('right').innerHTML = text);
 }
