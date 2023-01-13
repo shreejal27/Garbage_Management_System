@@ -55,6 +55,9 @@ $result= mysqli_query($connection, $query);
                 height: 20px;
                 width: 75px;
             }
+         img{
+          object-fit:contain;
+         }
 
 </style>
 
@@ -89,7 +92,7 @@ $result= mysqli_query($connection, $query);
         <div class="box" style="color: black; float: left; border: 1px dotted black;">
 
  
-          <span><img src ="scrap/<?php echo $row["simage"]?>" height = '100px' width= '100px'></span> <br><br>
+          <span><img src ="scrap/<?php echo $row["simage"]?>" height = '150px' width= '150px'></span> <br><br>
          <br>
             <span class="details">Name::</span>  <?php echo $row["sname"]?> <br>
             <span class="details">Price::</span> <?php echo $row["sprice"]?><br>

@@ -31,7 +31,7 @@
   .image{
     margin: 0px;
     height: 80%;
-    background-color:grey;
+    background-color:lightgreen;
   }
   .details{
     height: 20%;
@@ -72,6 +72,10 @@
     width: 50px;
     vertical-align: middle;
   }
+
+  img{
+    object-fit:contain;
+   }
   /* category button */
   button{
     

@@ -27,7 +27,7 @@ if($cookie != ""){
 
               <div id = "productbox">
                 <div class="image" style="float:left; ">
-                  <img src ="scrap/<?php echo $row["simage"]?>" height = '150px' width= '150px'>
+                  <img src ="scrap/<?php echo $row["simage"]?>" height = '150px' width= '150px' style=" object-fit:contain;">
                 </div>
                 <div class = "details" id=  "name<?php echo ++$i?>" value="<?php echo $id?>">  
                   <?php echo $row["sname"]?> 

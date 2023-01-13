@@ -98,7 +98,7 @@ button{
         <p style="font-size:24px;"> Sell Now </p>
     
     <div class="image" style="float:left; ">
-        <img src ="scrap/<?php echo $row["simage"]?>" height = '100px' width= '100px'>
+        <img src ="scrap/<?php echo $row["simage"]?>" height = '100px' width= '100px' style=" object-fit:contain;">
     </div>
     
     <div class = "details">  

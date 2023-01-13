@@ -61,7 +61,7 @@ $row = mysqli_fetch_array($data);
 <div class= "mainbox">
       <div class="image">
 
-         <img src ="scrap/<?php echo $row["simage"]?>" height = '300px' width= '300px'>
+         <img src ="scrap/<?php echo $row["simage"]?>" height = '300px' width= '300px'   style=" object-fit:contain;">
       </div>
 
       <div class="details"> 
