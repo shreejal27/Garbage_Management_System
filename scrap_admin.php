@@ -6,6 +6,9 @@ $query= "Select * from scrap";
 $result= mysqli_query($connection, $query);
 ?>
 <style>
+  h2{
+    margin:10px;
+  }
   .link{
     color: green;
   }
@@ -21,26 +24,60 @@ $result= mysqli_query($connection, $query);
   .align{
     text-align: center;
   }
+
+  label{
+              display: inline-block;
+              width: 100px;
+              margin-left: 10px;
+         }
+            input[type=submit], .butt{
+              transition-duration: 0.5s;
+              background-color: green;
+              color: black;
+              border: none;
+              padding: 10px 25px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin:10px;
+            }
+            input[type=submit]:hover{
+              background-color: #00b300;
+              color: white;
+            }
+            .butt:hover{
+              background-color: #00b300;
+              color: white;
+            }
+            .details{
+                display: inline-block;
+                height: 20px;
+                width: 75px;
+            }
+
 </style>
 
 <html>
     <head>
     </head>
     <body>
+    <h2>Add new Scrap Items</h2>
         <form action="scrap_processing.php" method="POST" enctype="multipart/form-data">
             <label> Scrap Name: </label>
-            <input type="text" name="sname"> 
+            <input type="text" name="sname" style="width: 150px; height: 25px;" required> 
             <br>
             <label> Price: </label>
-            <input type="number" name="sprice">
+            <input type="number" name="sprice" style="width: 150px; height: 25px;" required>
             <br>
             <label> Category: </label>
-            <input type="text" name="scategory">
+            <input type="text" name="scategory" style="width: 150px; height: 25px;" required>
             <br>
             <label> Scrap Image </label>
-            <input type="file" name="simage">
+            <input type="file" name="simage" style="width: 150px; height: 25px;" required>
             <br>
-            <input type="submit" value= "Submit">
+            <br>
+            <input type="submit" value= "Submit" class="butt">
         </form>
     </body>
 </html>
@@ -54,8 +91,9 @@ $result= mysqli_query($connection, $query);
  
           <span><img src ="scrap/<?php echo $row["simage"]?>" height = '100px' width= '100px'></span> <br><br>
          <br>
-            <?php echo $row["sname"]?> <br>
-           <?php echo $row["sprice"]?><br>
+            <span class="details">Name::</span>  <?php echo $row["sname"]?> <br>
+            <span class="details">Price::</span> <?php echo $row["sprice"]?><br>
+            <span class="details">Category::</span> <?php echo $row["category"]?><br>
          <br>
            <br>
             <span>
