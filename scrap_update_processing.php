@@ -28,13 +28,13 @@ if($record){
     unlink($imagepath. $image);
     echo '<script> 
     alert ("Record Have Been Successfully Updated")
-    window.location.replace("scrap_admin.php");
+    window.location.replace("admin.php");
     </script>';
  } 
  else{
     echo '<script> 
     alert ("Record Is Not Updated ! Please Try Again")
-    window.location.replace("scrap_admin.php");
+    window.location.replace("admin.php");
     </script>';
  }
  ?>
