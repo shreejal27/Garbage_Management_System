@@ -7,7 +7,7 @@ $query = "SELECT * FROM scrap WHERE id= '$id' ";
 $data = mysqli_query($connection, $query);
 $row = mysqli_fetch_array($data);
  $scrapname = $row["sname"];
- $category = $row["category"]
+ $category = $row["category"];
 
 ?>
 <style>

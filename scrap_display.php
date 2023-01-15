@@ -1,9 +1,11 @@
 <?php require_once "1)config.php"; ?>
 <?php
 
-$query= "Select * from scrap LIMIT 5";
+$query= "Select * from scrap LIMIT 6";
 
 $result= mysqli_query($connection, $query);
+$row = mysqli_fetch_array($result);
+$category = $row["category"];
 ?>
 
 
@@ -79,8 +81,15 @@ window.onclick = function(event) {
              
            </span>
            <span class="price">
-             
-             <?php echo $row["sprice"]?><br>
+             Rs.<?php 
+             echo $row["sprice"];
+             if ($category == "glass"){
+              echo "/pc";
+            }
+            else{
+              echo "/kg";
+            }
+             ?><br>
             </span>
           </div>
           <br>
@@ -125,8 +134,11 @@ while($row1= mysqli_fetch_assoc($result1)){
 
    </span>
    <span class="price">
-
-     <?php echo $row1["sprice"]?><br>
+      Rs.
+     <?php 
+      echo $row1["sprice"];
+      echo "/kg";
+      ?> <br>
    </span>
   </div>
  <br>
@@ -166,8 +178,9 @@ while($row1= mysqli_fetch_assoc($result1)){
 
    </span>
    <span class="price">
-
-     <?php echo $row1["sprice"]?><br>
+   Rs.
+     <?php echo $row1["sprice"];
+     echo "/kg";?><br>
    </span>
   </div>
  <br>
@@ -207,8 +220,9 @@ while($row1= mysqli_fetch_assoc($result1)){
 
    </span>
    <span class="price">
-
-     <?php echo $row1["sprice"]?><br>
+   Rs.
+     <?php echo $row1["sprice"];
+     echo "/kg";?><br>
    </span>
   </div>
  <br>
@@ -247,9 +261,11 @@ while($row1= mysqli_fetch_assoc($result1)){
      <?php echo $row1["sname"]?> <br> 
 
    </span>
+   Rs.
    <span class="price">
 
-     <?php echo $row1["sprice"]?><br>
+     <?php echo $row1["sprice"];
+        echo "/pc"?><br>
    </span>
   </div>
  <br>

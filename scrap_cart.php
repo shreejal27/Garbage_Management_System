@@ -56,11 +56,10 @@ if($cookie != ""){
       </div>
         
  
-        <i class="fa fa-trash-o" style="font-size:35px; cursor: pointer; margin-top: 30px;"  onclick="deletee(<?php echo $i?>)"></i>
+        <i class="fa fa-trash-o" style="font-size:35px; cursor: pointer; margin-top: 70px;"  onclick="deletee(<?php echo $i?>)"></i>
       
-        <br>
-    <br>
-    <br>
+
+                  <br>
     <br>
     <br>
       <div class="sell">
@@ -172,12 +171,15 @@ else{
           float: left;
           background-color: cornsilk;
       }
-
+      img{
+        margin-top: 30px;
+        margin-left: 10px;
+      }
       .details{
           float:left; 
           font-size: 32px;
           margin: 10px;
-          margin-top: 30px;
+          margin-top: 70px;
           /* margin-left: 10%; */
           width: 275px;
       }
