@@ -7,6 +7,7 @@ $query = "SELECT * FROM scrap WHERE id= '$id' ";
 $data = mysqli_query($connection, $query);
 $row = mysqli_fetch_array($data);
  $scrapname = $row["sname"];
+ $category = $row["category"]
 
 ?>
 <style>
@@ -71,7 +72,15 @@ $row = mysqli_fetch_array($data);
       </span>
       <span style="font-size: 30px;">
           
-          Rs: <?php echo $row["sprice"]?>
+          Rs: <?php 
+          echo $row["sprice"] ;
+          if ($category == "glass"){
+            echo "/pc";
+          }
+          else{
+            echo "/kg";
+          }
+          ?>
       </span>
       <br> <br> <br>
        <span style="font-size: 20px;">
