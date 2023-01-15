@@ -6,6 +6,8 @@ $id= $_GET['id'];
 $query = "SELECT * FROM scrap WHERE id= '$id' ";
 $data = mysqli_query($connection, $query);
 $row = mysqli_fetch_array($data);
+
+$category = $row['category'];
 ?>
 
 <?php
@@ -105,7 +107,15 @@ button{
         <?php echo $row["sname"]?> 
     </div>
     <div class = "details">
-        Qty: <?php echo $cookie?>
+        Qty: <?php 
+        echo $cookie;
+        if ($category == "glass"){
+            echo "/pc";
+          }
+          else{
+            echo "/kg";
+          }
+        ?>
     </div>
     <div class = "details">
         Rs: <?php echo $row['sprice']?>

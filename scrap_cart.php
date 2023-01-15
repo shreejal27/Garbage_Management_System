@@ -3,6 +3,8 @@
 
 $cookie = $_COOKIE['cart'];
 
+$grandtotal=0;
+
 // Decode the cookie value into an object
 if($cookie != ""){
   $cookies = $_COOKIE['cart'];
@@ -22,6 +24,8 @@ if($cookie != ""){
             $query = "SELECT * FROM scrap WHERE id= '$id' ";
             $data = mysqli_query($connection, $query);
             $row = mysqli_fetch_array($data);
+
+            $category = $row['category'];
             ?>
             <center>
 
@@ -33,27 +37,47 @@ if($cookie != ""){
                   <?php echo $row["sname"]?> 
                 </div>
                 <div class = "details" id="qty<?php echo ++$i?>">
-                  Qty: <?php echo $qty?>
+                  Qty: <?php 
+                  echo $qty;
+                  if ($category == "glass"){
+                    echo "/pc";
+                  }
+                  else{
+                    echo "/kg";
+                  }
+                  ?>
                 </div>
         <div class = "details">
-          Rs: <?php echo $row['sprice']?>
+          Rs: <?php 
+          echo $row['sprice'];
+        
+          ?>
         </d>
       </div>
         
-    
+ 
         <i class="fa fa-trash-o" style="font-size:35px; cursor: pointer; margin-top: 30px;"  onclick="deletee(<?php echo $i?>)"></i>
       
-      
-      <div class="sell">
-        SubTotal: Rs. <?php echo ($qty* $row['sprice'])?>
         <br>
-        <!-- <button> <a class= "button" href="scrap_address.php">Confirm Sell</a></button> -->
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="sell">
+
+        SubTotal: Rs. <?php 
+        echo ($qty* $row['sprice']);
+        $grandtotal =   $grandtotal+ ($qty* $row['sprice']);
+        ?>
+        <br>
       </div>
     </center>
-    
     <?php
   }
+
   ?>
+ 
+    <span id="grandtotal"> Grand Total : <?php echo $grandtotal;?></span> <br><br><br>
     <button> <a class= "button" href="scrap_address.php">Confirm Sell</a></button>
   <?php
 }
@@ -126,74 +150,64 @@ else{
 
 
 
-
-
 <style>
-    body{
-        margin-left: 10%;
-        margin-right: 10%;
-        background-color: lightgreen;
-    }
+      body{
+              margin-left: 10%;
+              margin-right: 10%;
+              background-color: lightgreen;    
+      }
 
-a{
-    color: cornsilk;
-    font-size: 20px;
-    text-decoration: none;
-}
+      a{
+          color: cornsilk;
+          font-size: 20px;
+          text-decoration: none;
+      }
 
-#productbox{
-    width: 100%;
-    height: 200px;
-    outline: 1px solid black;
-    margin: 10px 0px;
-    padding: 10px;
-    float: left;
-    background-color: cornsilk;
-}
+      #productbox{
+          width: 100%;
+          height: 200px;
+          outline: 1px solid black;
+          margin: 10px 0px;
+          padding: 10px;
+          float: left;
+          background-color: cornsilk;
+      }
 
-.details{
-    float:left; 
-    font-size: 32px;
-    margin: 10px;
-    margin-top: 30px;
-    /* margin-left: 10%; */
-    width: 275px;
-}
+      .details{
+          float:left; 
+          font-size: 32px;
+          margin: 10px;
+          margin-top: 30px;
+          /* margin-left: 10%; */
+          width: 275px;
+      }
 
-.sell{
-    margin-top: 30px;
-    float: right; 
-    font-size: 20px;
-}
-button{
-    height: 40px;
-    width: 200px;
-    float:right;
-    margin-top: 10px;
-    margin: 10px;
-    /* border-radius: 5px; */
-    background-color: green;
-    
-}
-.button{
-    font-size: 16px;
-}
+      .sell{
+          margin-top: 30px;
+          float: right; 
+          font-size: 20px;
+      }
+      button{
+          height: 40px;
+          width: 200px;
+          float:right;
+          margin-top: 10px;
+          margin: 10px;
+          /* border-radius: 5px; */
+          background-color: green;
+          
+      }
+      .button{
+          font-size: 16px;
+      }
 
-    </style>
+      #grandtotal{
+        float: right;
+        margin-right: 10px;
+        margin-top: 10px;
+      
+        font-size: 32px;
+      }
 
-<!-- <center>
-    
-    <div id="addressbar">
-        <a href="scrap_address.php"> Add Your Address </a>
-    </div>
-</center>
-    
- 
-  
-    <div class="pickup">
-        <p>Standard PickUp</p>
-        <p>Free</p>   
-     </div>
+ </style>
 
-
-        </div> -->
