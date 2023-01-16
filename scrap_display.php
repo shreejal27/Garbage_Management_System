@@ -1,7 +1,6 @@
 
 <?php 
 
-
 require_once 'auth_check.php';
 
 require_once "1)config.php";
@@ -18,6 +17,7 @@ $result= mysqli_query($connection, $query);
 
 
  <link rel="stylesheet" href="scrap_display.css" />
+
  <link rel="stylesheet" href="headerfooter.css" />
 
 
@@ -114,7 +114,7 @@ window.onclick = function(event) {
 </div>
 
 
-<h1> Categories</h1>
+<h1 id="title"> Categories</h1>
 
 <div class= "row" id="plastic">
 

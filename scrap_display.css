@@ -1,9 +1,18 @@
 
 
   body{
+   
+    background-color: lightgreen;
+    /* overflow-x: hidden; Hide horizontal scrollbar */
+  }
+  .row, #toprow{
     margin-left: 10%;
     margin-right: 10%;
-    background-color: lightgreen;
+  }
+
+  #title{
+    margin-left: 145px;
+    margin-bottom: 20px;
   }
 
 
@@ -110,6 +119,7 @@
   border: none;
   cursor: pointer;
   width: 100px;
+
 }
 
 .dropbtn:hover, .dropbtn:focus {
