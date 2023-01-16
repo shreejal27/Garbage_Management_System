@@ -1,4 +1,13 @@
-<?php require_once "1)config.php"; ?>
+
+<?php 
+
+
+require_once 'auth_check.php';
+
+require_once "1)config.php";
+
+include_once "header.php";
+?>
 <?php
 
 $query= "Select * from scrap LIMIT 5";
@@ -9,6 +18,7 @@ $result= mysqli_query($connection, $query);
 
 
  <link rel="stylesheet" href="scrap_display.css" />
+ <link rel="stylesheet" href="headerfooter.css" />
 
 
 <div id="toprow">
@@ -277,4 +287,8 @@ while($row1= mysqli_fetch_assoc($result1)){
 }
 ?>
 </div>
+
+<?php
+  include_once "footer.php";
+?>
 

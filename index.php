@@ -38,7 +38,7 @@
           </a>
         </div>
         <div class="iconbox-bottom">
-          <a href="Recycler.php" onclick="checklogin()">
+          <a href="scrap_display.php" onclick="checklogin()">
             <div class="icon-logo" id="logo4"></div>
             <div class="icon-title">
               <p>Wanna Sell Your Junk</p>
