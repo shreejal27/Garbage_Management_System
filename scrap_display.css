@@ -19,6 +19,7 @@
     color: black; 
     float: left; 
     background-color: cornsilk;
+    border: 3px dotted cornsilk;
   
   }
   .box:hover{
@@ -32,6 +33,12 @@
     margin: 0px;
     height: 80%;
     background-color:lightgreen;
+  }
+  .image:hover{
+    background: linear-gradient(to left, cornsilk 50%, lightgreen 50%) right;
+ 
+    background-size: 200%;
+    transition: .5s ease-out;
   }
   .details{
     height: 20%;

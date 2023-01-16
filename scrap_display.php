@@ -1,11 +1,10 @@
 <?php require_once "1)config.php"; ?>
 <?php
 
-$query= "Select * from scrap LIMIT 6";
+$query= "Select * from scrap LIMIT 5";
 
 $result= mysqli_query($connection, $query);
-$row = mysqli_fetch_array($result);
-$category = $row["category"];
+
 ?>
 
 
@@ -54,11 +53,11 @@ window.onclick = function(event) {
 }
 </script>
 
-<br><br><br><br><br>
+<br><br>
 
 <div class= "row" >
 
-  <h2> Most Sold</h2>
+  <h2 style="font-size: 32px;"> Most Sold</h2>
   
   <?php
     while($row= mysqli_fetch_assoc($result)){
@@ -83,6 +82,7 @@ window.onclick = function(event) {
            <span class="price">
              Rs.<?php 
              echo $row["sprice"];
+             $category= $row["category"];
              if ($category == "glass"){
               echo "/pc";
             }

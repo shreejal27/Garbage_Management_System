@@ -18,6 +18,12 @@ function scrap(){
   .then(text => document.getElementById('right').innerHTML = text);
 }
 
+function scrapDB(){
+  fetch('scrap_database.php')
+  .then(response => response.text())
+  .then(text => document.getElementById('right').innerHTML = text);
+}
+
 //   function complain() {
 //     var ajax = new XMLHttpRequest();
 // ajax.onreadystatechange = function() {

@@ -22,6 +22,7 @@ require_once 'auth_check.php';
         <li id="showVan" onclick="showVan()">Garbage Van Tracker</li>
         <li id="showDustbin" onclick="showDustbin()">Dustins</li>
         <li id="scrap" onclick="scrap()">Scrap</li>
+        <li id="scrap" onclick="scrapDB()">Scrap Orders</li>
         <li id="complain" onclick="complain()">View Complains</li>
         <!-- <li id="scrap" onclick="scrap()">Collect Scrap</li> -->
         <li id="driver" onclick="driver()">Drivers Requests</li>
