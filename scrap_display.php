@@ -287,7 +287,25 @@ while($row1= mysqli_fetch_assoc($result1)){
 }
 ?>
 </div>
-
+<br><br><br>
+<center> <h1>Have any queries or prefer speaking over the phone? </h1></center>
+<br><br>
+<div>
+        <center> 
+        <div style="float: left; width:50%"> 
+      <h3> GENERAL INQUERIES</h3>   <br><br>
+      +977 984152630 <br>
+      Garbage@management.com</div>
+        <div style="width: 50%; float: left;">
+        <h3>BOOK A PICK UP </h3> <br><br>
+        +977 984152630 
+      </div>
+      </center>
+    </div>
+    <br> <br><br> <br> <br><br>
+  
+    
+    
 <?php
   include_once "footer.php";
 ?>
