@@ -20,7 +20,7 @@ $result= mysqli_query($connection, $query);
 
  <link rel="stylesheet" href="headerfooter.css" />
 
-
+<br>
 <div id="toprow">
 
   <form action="scrap_searchresult.php" method="POST">

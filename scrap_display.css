@@ -3,7 +3,7 @@
   body{
    
     background-color: lightgreen;
-    /* overflow-x: hidden; Hide horizontal scrollbar */
+    /* overflow-x: hidden;  */
   }
   .row, #toprow{
     margin-left: 10%;

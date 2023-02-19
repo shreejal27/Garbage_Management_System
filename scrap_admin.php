@@ -80,6 +80,7 @@ $result= mysqli_query($connection, $query);
             <option value = "paper">Paper</option>
             <option value = "glass">Glass</option>
             <option value = "ewaste">Ewaste</option>
+            <option value = "food">Food</option>
          </select>
             <br>
             <label> Scrap Image </label>

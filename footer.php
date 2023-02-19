@@ -3,19 +3,19 @@
 
             <div class="bottomleft">
                 <p> &copy;
-                    2022 by Shreejal & Lixon <br> <br>
+                    2022 by Shreejal <br> <br>
                     Helloworld</p>
             </div>
             <div class="bottomright">
                 <div class=bcol1>
                     <p>Call<br>
                         +977 9861489363 <br>
-                      +977 9860930533</p>
+             </p>
                 </div>
                 <div class="bcol2">
                     <p>Write<br>
                         shreejal27@gmail.com <br>
-                      lizonshrestha77@gmail.com</p>
+                   </p>
                 </div>
                 <div class="bcol3">
                     <p>Follow <br>
