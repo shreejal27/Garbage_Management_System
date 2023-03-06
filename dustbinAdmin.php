@@ -62,11 +62,11 @@
             
               while ($row= mysqli_fetch_assoc($result)){
             ?>
-             addMarker({ lat: <?php echo $row["latitude"]?>, lng: <?php echo $row["longitude"]?> });
+             addMarker({ lat: <?php echo $row["latitude"]?>, lng: <?php echo $row["longitude"]?> }, "<?php echo $row["info"]?>");
              <?php }
              ?>
               // Add Marker function
-              function addMarker(coords) {
+              function addMarker(coords, info) {
                 var marker = new google.maps.Marker({
                   position: coords,
                   map: map,
@@ -74,7 +74,14 @@
                     url: "icons/dustbin.png",
                     scaledSize: new google.maps.Size(30, 30),
                   },
+                  animation: google.maps.Animation.DROP
                 });
+                const infoWindow = new google.maps.InfoWindow({
+                  content: info,
+                });
+                marker.addListener("click", ()=>{
+                  infoWindow.open(map, marker);
+                })
               }
             }
 
